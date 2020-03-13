@@ -15,7 +15,7 @@ This image is published in the [Docker Hub](https://hub.docker.com/r/kissjared/p
 
 PHP Version: `PHP 7.4.3`
 
-Php-fpm Core Config Dile：`/usr/local/etc/php-fpm.conf`
+PHP-FPM Core Config File：`/usr/local/etc/php-fpm.conf`
 
 Include Directory: `/usr/local/etc/php-fpm.d/`
 
