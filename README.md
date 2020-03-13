@@ -19,7 +19,7 @@ PHP-FPM Core Config File：`/usr/local/etc/php-fpm.conf`
 
 Include Directory: `/usr/local/etc/php-fpm.d/`
 
-Extention Directory: `/usr/local/lib/php/extensions/no-debug-non-zts-20190902/`
+Extended Directory: `/usr/local/lib/php/extensions/no-debug-non-zts-20190902/`
 
 
 ### PHP Modules
