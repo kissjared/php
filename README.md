@@ -4,12 +4,12 @@ This PHP docker image based on [kissjared/alpine-base](https://hub.docker.com/r/
 
 ## Supported tags and `Dockerfile` links
 
- - [`7.4-fpm-alpine`, `latest` (Dockerfile)](https://github.com/kissjared/php74/blob/master/Dockerfile)
+ - [`7.4-fpm-alpine`, `latest` (Dockerfile)](https://github.com/kissjared/php/blob/master/Dockerfile)
 
 
 ## Getting The Image
 
-This image is published in the [Docker Hub](https://hub.docker.com/r/kissjared/php/)
+This image is published in the [Docker Hub](https://hub.docker.com/r/kissjared/php)
 
 ### PHP Configuration
 
@@ -20,7 +20,6 @@ PHP-FPM Core Config File：`/usr/local/etc/php-fpm.conf`
 Include Directory: `/usr/local/etc/php-fpm.d/`
 
 Extended Directory: `/usr/local/lib/php/extensions/no-debug-non-zts-20190902/`
-
 
 ### PHP Modules
 ```
