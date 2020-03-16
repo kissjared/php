@@ -55,7 +55,6 @@ RUN set -eux; \
 	mkdir -p /usr/src; \
 	cd /usr/src; \
 	curl -fsSL -o php.tar.xz "$PHP_URL"; \
-	#wget -qO php.tar.xz "$PHP_URL"; \
 
 	if [ -n "$PHP_SHA256" ]; then \
 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; \
@@ -65,7 +64,6 @@ RUN set -eux; \
 	fi; \
 	if [ -n "$PHP_ASC_URL" ]; then \
 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; \
-		#wget -qO php.tar.xz.asc "$PHP_ASC_URL"; \
 		export GNUPGHOME="$(mktemp -d)"; \
 		for key in $GPG_KEYS; do \
 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; \

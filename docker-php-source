@@ -11,7 +11,7 @@ usage() {
 	echo "Commands:"
 	echo "   extract  extract php source tarball into directory $dir if not already done."
 	echo "   delete   delete extracted php source located into $dir and delete the php "
-        echo "            source tarball if not already done."
+	echo "            source tarball if not already done."
 	echo
 }
 
@@ -26,7 +26,7 @@ case "$1" in
 
 	delete)
 		rm -rf "$dir"
-                rm -fr /usr/src/php.tar.xz
+		rm -fr /usr/src/php.tar.xz
 		;;
 
 	*)
