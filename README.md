@@ -13,19 +13,13 @@ This image is published in the [Docker Hub](https://hub.docker.com/r/kissjared/p
 
 ### PHP Configuration
 
-PHP version:            `PHP 7.4.3`
-
-PHP FPM defconfig:      `/usr/local/etc/`
-
-PHP FPM core config:    `/usr/local/etc/php-fpm.conf`
-
-PHP FPM include config: `/usr/local/etc/php-fpm.d/`
-
-PHP shared extensions:  `/usr/local/lib/php/extensions/no-debug-non-zts-20190902/`
-
-PHP CLI binary:         `/usr/local/bin/`
-
-PHP FPM binary:         `/usr/local/sbin/`
+* PHP version:            `PHP 7.4.3`
+* PHP FPM defconfig:      `/usr/local/etc/`
+* PHP FPM core config:    `/usr/local/etc/php-fpm.conf`
+* PHP FPM include config: `/usr/local/etc/php-fpm.d/`
+* PHP shared extensions:  `/usr/local/lib/php/extensions/no-debug-non-zts-20190902/`
+* PHP CLI binary:         `/usr/local/bin/`
+* PHP FPM binary:         `/usr/local/sbin/`
 
 ### PHP Modules
 ```
