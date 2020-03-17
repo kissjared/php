@@ -143,7 +143,7 @@ RUN set -eux; \
 	cp -v php.ini-* "$PHP_INI_DIR/"; \
 	cd /; \
 	pecl update-channels; \
-        pecl install xdebug apcu && \
+        pecl install xdebug apcu redis && \
 	docker-php-source delete; \
 	runDeps="$( \
 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local \
@@ -156,7 +156,7 @@ RUN set -eux; \
 	rm -rf /tmp/pear ~/.pearrc; \
 	php --version
 
-RUN docker-php-ext-enable sodium xdebug opcache apcu \
+RUN docker-php-ext-enable sodium xdebug opcache apcu redis \
 # php-ext-xdebug
     && echo "xdebug.remote_enable=on\n" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
     && echo "xdebug.remote_autostart=on\n" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
