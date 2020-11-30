@@ -13,7 +13,7 @@ This image is published in the [Docker Hub](https://hub.docker.com/r/kissjared/p
 
 ### PHP Configuration
 
-* PHP version:            `PHP 7.4.3`
+* PHP version:            `PHP 7.4.13`
 * PHP FPM defconfig:      `/usr/local/etc/`
 * PHP FPM core config:    `/usr/local/etc/php-fpm.conf`
 * PHP FPM include config: `/usr/local/etc/php-fpm.d/`
