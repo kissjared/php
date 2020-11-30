@@ -43,12 +43,12 @@ ENV PHP_EXTRA_CONFIGURE_ARGS --enable-fpm --with-fpm-user=www --with-fpm-group=w
 
 ENV PHP_CFLAGS="-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64"
 ENV PHP_CPPFLAGS="$PHP_CFLAGS"
-ENV PHP_LDFLAGS="-Wl,-O1 -Wl,--hash-style=both -pie"
+ENV PHP_LDFLAGS="-Wl,-O1 -pie"
 ENV GPG_KEYS 42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312
 
-ENV PHP_VERSION 7.4.3
-ENV PHP_URL="http://download.weiboyi.com/ops/packages/php/php-7.4.3.tar.xz" PHP_ASC_URL="http://download.weiboyi.com/ops/packages/php/php-7.4.3.tar.xz.asc"
-ENV PHP_SHA256="cf1f856d877c268124ded1ede40c9fb6142b125fdaafdc54f855120b8bc6982a" PHP_MD5=""
+ENV PHP_VERSION 7.4.13
+ENV PHP_URL="http://download.weiboyi.com/ops/packages/php/php-7.4.13.tar.xz" PHP_ASC_URL="http://download.weiboyi.com/ops/packages/php/php-7.4.13.tar.xz.asc"
+ENV PHP_SHA256="aead303e3abac23106529560547baebbedba0bb2943b91d5aa08fff1f41680f4" PHP_MD5=""
 
 RUN set -eux; \
 	apk add --no-cache --virtual .fetch-deps gnupg; \
@@ -93,6 +93,11 @@ RUN set -eux; \
 		openssl-dev \
 		sqlite-dev \
                 gettext-dev \
+		libjpeg-turbo-dev \
+		libjpeg-turbo \
+		libpng-dev \
+		freetype-dev \
+		jpeg-dev \
 	; \
 	export CFLAGS="$PHP_CFLAGS" \
 		CPPFLAGS="$PHP_CPPFLAGS" \
@@ -123,6 +128,7 @@ RUN set -eux; \
                 --with-pdo-mysql=mysqlnd \
                 --with-xsl \
                 --with-mhash \
+		--with-pic \
 		--with-password-argon2 \
 		--with-sodium=shared \
 		--with-pdo-sqlite=/usr \
@@ -132,6 +138,8 @@ RUN set -eux; \
 		--with-openssl \
 		--with-zlib \
 		--with-pear \
+		--with-freetype \
+		--with-jpeg \
 		$(test "$gnuArch" = 's390x-linux-musl' && echo '--without-pcre-jit') \
 		${PHP_EXTRA_CONFIGURE_ARGS:-} \
 	; \
